@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Paddings -->
+    <dimen name="no_padding">0dp</dimen>
+    <dimen name="padding_tiny">2dp</dimen>
+    <dimen name="padding_xxxsmall">4dp</dimen>
+    <dimen name="padding_xxsmall">6dp</dimen>
+    <dimen name="padding_xsmall">8dp</dimen>
+    <dimen name="padding_small">10dp</dimen>
+    <dimen name="padding_medium_small">12dp</dimen>
+    <dimen name="padding_xmedium_small">14dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_medium_large">20dp</dimen>
+    <dimen name="padding_xxmedium_large">24dp</dimen>
+    <dimen name="padding_xxxmedium_large">28dp</dimen>
+    <dimen name="padding_large">32dp</dimen>
+    <dimen name="padding_large_x">40dp</dimen>
+    <dimen name="padding_large_xx">44dp</dimen>
+    <dimen name="padding_large_xxx">48dp</dimen>
+    <dimen name="padding_xlarge">56dp</dimen>
+    <dimen name="padding_xxlarge">60dp</dimen>
+    <dimen name="padding_xxxlarge">64dp</dimen>
+    <dimen name="padding_xxxxlarge">68dp</dimen>
+    <dimen name="padding_giant">72dp</dimen>
+    <dimen name="padding_giant_xx">80dp</dimen>
+    <dimen name="padding_giant_comment">60dp</dimen>
+
+    <!-- Margins -->
+    <dimen name="no_margin">0dp</dimen>
+    <dimen name="margin_tiny">2dp</dimen>
+    <dimen name="margin_xxxsmall">4dp</dimen>
+    <dimen name="margin_xxsmall">6dp</dimen>
+    <dimen name="margin_xsmall">8dp</dimen>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_medium_small">12dp</dimen>
+    <dimen name="margin_xmedium_small">14dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_medium_large">20dp</dimen>
+    <dimen name="margin_xmedium_large">22dp</dimen>
+    <dimen name="margin_xxmedium_large">24dp</dimen>
+    <dimen name="margin_xxxmedium_large">28dp</dimen>
+    <dimen name="margin_large">32dp</dimen>
+    <dimen name="margin_large_x">36dp</dimen>
+    <dimen name="margin_large_xx">40dp</dimen>
+    <dimen name="margin_large_xxx">48dp</dimen>
+    <dimen name="margin_large_xxxx">52dp</dimen>
+    <dimen name="margin_xlarge">56dp</dimen>
+    <dimen name="margin_xxlarge">60dp</dimen>
+    <dimen name="margin_xxxlarge">64dp</dimen>
+    <dimen name="margin_xxxxlarge">68dp</dimen>
+    <dimen name="margin_giant">72dp</dimen>
+
+    <!-- Match parent -->
+    <dimen name="constraint_match_parent">0dp</dimen>
+
+    <!-- Buttons   -->
+    <dimen name="button_width">300dp</dimen>
+
+
+    <!-- Dividers -->
+    <dimen name="divider_height">1dp</dimen>
+
+    <!-- Map -->
+    <dimen name="animation_dots_radius">1.5dp</dimen>
+    <dimen name="animation_dots_margin">8dp</dimen>
+    <dimen name="map_city_marker_width">64dp</dimen>
+    <dimen name="map_city_marker_height">32dp</dimen>
+    <dimen name="map_city_marker_corners">14dp</dimen>
+    <dimen name="map_city_marker_stroke">1dp</dimen>
+</resources>

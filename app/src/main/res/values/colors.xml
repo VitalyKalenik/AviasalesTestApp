@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">#ff000000</color>
+    <color name="white">#ffffffff</color>
+
+    <!-- Цвета для карты -->
+    <color name="color_black_alpha55">#8c000000</color>
+    <color name="map_city_marker_color">#bbfabb00</color>
+
+    <!-- Green colors -->
+    <color name="color_green_9">#012110</color>
+    <color name="color_green_8">#034220</color>
+    <color name="color_green_7">#046331</color>
+    <color name="color_green_6">#068441</color>
+    <color name="color_green_5">#08a652</color>
+    <color name="color_green_4">#34b76f</color>
+    <color name="color_green_3">#60c78d</color>
+    <color name="color_green_2">#8bd8aa</color>
+    <color name="color_green_1">#b7e8c8</color>
+    <color name="color_green_0">#e3f9e5</color>
+
+    <!-- Teal colors -->
+    <color name="color_teal_9">#00281e</color>
+    <color name="color_teal_8">#00513d</color>
+    <color name="color_teal_7">#007a5b</color>
+    <color name="color_teal_6">#00a37a</color>
+    <color name="color_teal_5">#00cc99</color>
+    <color name="color_teal_4">#33d6ad</color>
+    <color name="color_teal_3">#66e0c1</color>
+    <color name="color_teal_2">#99ead6</color>
+    <color name="color_teal_1">#ccf4ea</color>
+    <color name="color_teal_0">#e5f9f4</color>
+
+    <!-- Violet colors -->
+    <color name="color_violet_9">#140028</color>
+    <color name="color_violet_8">#280051</color>
+    <color name="color_violet_7">#3d007a</color>
+    <color name="color_violet_6">#5100a3</color>
+    <color name="color_violet_5">#6600cc</color>
+    <color name="color_violet_4">#8433d6</color>
+    <color name="color_violet_3">#a366e0</color>
+    <color name="color_violet_2">#c199ea</color>
+    <color name="color_violet_1">#e0ccf4</color>
+    <color name="color_violet_0">#efe5f9</color>
+
+</resources>

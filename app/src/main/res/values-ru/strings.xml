@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">AviaTest</string>
+
+    <!-- Заголовки -->
+    <string name="title_activity_search">Поиск</string>
+
+    <!-- Ошибки -->
+    <string name="choose_different_cities_error">Выберите разные города</string>
+    <string name="cities_not_chosen_error">Выберите города отправления и назначения</string>
+    <string name="search_error">Что-то пошло не так</string>
+
+    <!-- Кнопки -->
+    <string name="button_start_point">Город отправления</string>
+    <string name="button_destination_pont">Город назначения</string>
+    <string name="button_search">Искать</string>
+
+    <!-- Поиск -->
+    <string name="search_view_hint">Введите название города</string>
+
+</resources>
