@@ -19,6 +19,8 @@ import com.vitalykalenik.aviatest.view.animation.MarkerAnimator
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var map: GoogleMap
+    private lateinit var animator: MarkerAnimator
+    private var startValue = 0f
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,24 +35,37 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val startLocation = intent.getParcelableExtra<City>(START_LOCATION_EXTRA)
         val destinationLocation = intent.getParcelableExtra<City>(DESTINATION_LOCATION_EXTRA)
 
-        map.setUpMap()
-        MarkerAnimator(map, resources, this, startLocation, destinationLocation).start()
+        animator = MarkerAnimator(
+            map,
+            resources,
+            this,
+            startLocation,
+            destinationLocation,
+            startValue
+        )
+        animator.start()
     }
 
-    private fun GoogleMap.setUpMap() = uiSettings.apply {
-        setAllGesturesEnabled(false)
-        isCompassEnabled = false
-        isZoomControlsEnabled = false
-        isMapToolbarEnabled = false
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        if (::animator.isInitialized) {
+            outState.putFloat(PLANE_PROGRESS_VALUE, animator.currentProgress)
+        }
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        startValue = savedInstanceState.getFloat(PLANE_PROGRESS_VALUE)
     }
 
     companion object {
 
         private const val START_LOCATION_EXTRA = "startLocationExtra"
         private const val DESTINATION_LOCATION_EXTRA = "destinationLocationExtra"
+        private const val PLANE_PROGRESS_VALUE = "planeProgressValue"
 
         /**
-         * Новый [intent] с параметрами для старта этой активити
+         * Новый [Intent] с параметрами для старта этой активити
          *
          * @param context Контекст для старта активити
          * @param startCity Город отправления
