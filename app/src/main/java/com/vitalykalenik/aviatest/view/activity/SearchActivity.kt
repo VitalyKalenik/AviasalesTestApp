@@ -3,7 +3,8 @@ package com.vitalykalenik.aviatest.view.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.view.View
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -28,6 +29,7 @@ class SearchActivity : AppCompatActivity() {
     private lateinit var searchView: SearchView
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: SearchResultAdapter
+    private lateinit var progressBar: ProgressBar
 
     private val searchViewModel: SearchViewModel by viewModels()
 
@@ -42,6 +44,7 @@ class SearchActivity : AppCompatActivity() {
     private fun initViews() {
         searchView = findViewById(R.id.search_view)
         recyclerView = findViewById(R.id.search_result_recycler)
+        progressBar = findViewById(R.id.progress_bar)
         initRecycler()
         startObservingSearchView()
         searchView.requestFocus()
@@ -61,6 +64,7 @@ class SearchActivity : AppCompatActivity() {
 
     private fun initViewModel() {
         searchViewModel.getSearchSuccessLiveData().observe(this, Observer { response ->
+            progressBar.stop()
             adapter.updateList(response.cities)
         })
 
@@ -73,15 +77,25 @@ class SearchActivity : AppCompatActivity() {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
             override fun onQueryTextSubmit(query: String?): Boolean {
-                searchViewModel.searchSubject.onComplete()
-                return true
+                return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
+                progressBar.start()
                 searchViewModel.searchSubject.onNext(newText ?: StringUtils.EMPTY)
                 return true
             }
         })
+    }
+
+    private fun ProgressBar.stop() {
+        visibility = View.INVISIBLE
+        isIndeterminate = false
+    }
+
+    private fun ProgressBar.start() {
+        visibility = View.VISIBLE
+        isIndeterminate = true
     }
 
     interface SearchResultClick {

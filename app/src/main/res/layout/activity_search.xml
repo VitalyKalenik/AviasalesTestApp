@@ -16,6 +16,14 @@
         app:iconifiedByDefault="false"
         app:queryHint="@string/search_view_hint" />
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:indeterminate="true" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/search_result_recycler"
         android:layout_width="match_parent"

@@ -1,13 +1,11 @@
 package com.vitalykalenik.aviatest.view.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.SavedStateHandle
 import com.vitalykalenik.aviatest.domain.SearchInteractor
 import com.vitalykalenik.aviatest.models.AviaResponse
-import dagger.assisted.Assisted
 import dagger.hilt.android.lifecycle.HiltViewModel
+import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.PublishSubject
@@ -50,12 +48,15 @@ class SearchViewModel @Inject constructor(
 
     private fun createSearchSubject() = searchSubject
         .debounce(REQUEST_INTERVAL, TimeUnit.MILLISECONDS, AndroidSchedulers.mainThread())
-        .filter { text -> text.isNotEmpty() }
         .distinctUntilChanged()
         .switchMap {
-            searchInteractor.getCities(it)
-                .toObservable()
-                .subscribeOn(Schedulers.io())
+            if (it.isEmpty()) {
+                Observable.just(AviaResponse(emptyList()))
+            } else {
+                searchInteractor.getCities(it)
+                    .toObservable()
+                    .subscribeOn(Schedulers.io())
+            }
         }
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(
