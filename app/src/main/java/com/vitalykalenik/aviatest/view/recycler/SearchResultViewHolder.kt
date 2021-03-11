@@ -12,15 +12,25 @@ import com.vitalykalenik.aviatest.view.activity.SearchActivity
  *
  * @constructor
  * @param Вью элемента
+ * @param onClick Коллбэк нажатия
  *
  * @author Vitaly Kalenik
  */
-class SearchResultViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+class SearchResultViewHolder(view: View, onClick: SearchActivity.SearchResultClick) : RecyclerView.ViewHolder(view) {
 
     private val title: TextView = view.findViewById(R.id.search_result_city)
+    private lateinit var currentCity: City
 
-    fun bindView(city: City, onClick: SearchActivity.SearchResultClick) {
+    init {
+        itemView.setOnClickListener {
+            if (::currentCity.isInitialized) {
+                onClick.click(currentCity)
+            }
+        }
+    }
+
+    fun bindView(city: City) {
         title.text = city.fullname
-        itemView.setOnClickListener { onClick.click(city) }
+        currentCity = city
     }
 }

@@ -34,11 +34,12 @@ class SearchResultAdapter(private val clickListener: SearchActivity.SearchResult
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchResultViewHolder = SearchResultViewHolder(
-        LayoutInflater.from(parent.context).inflate(R.layout.recycler_search_result_item, parent, false)
+        LayoutInflater.from(parent.context).inflate(R.layout.recycler_search_result_item, parent, false),
+        clickListener
     )
 
     override fun getItemCount(): Int = itemList.size
 
     override fun onBindViewHolder(holder: SearchResultViewHolder, position: Int) =
-        holder.bindView(itemList[position], clickListener)
+        holder.bindView(itemList[position])
 }
