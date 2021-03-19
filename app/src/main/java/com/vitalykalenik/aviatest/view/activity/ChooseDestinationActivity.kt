@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.vitalykalenik.aviatest.R
-import com.vitalykalenik.aviatest.models.City
+import com.vitalykalenik.aviatest.view.models.CityModel
 
 /**
  * Экран с полями для ввода городов откуда/куда
@@ -19,15 +19,15 @@ class ChooseDestinationActivity : AppCompatActivity() {
     private lateinit var chooseDestinationPointButton: Button
     private lateinit var searchButton: Button
 
-    private var startCity: City? = null
-    private var destinationCity: City? = null
+    private var startCity: CityModel? = null
+    private var destinationCity: CityModel? = null
 
     private val startCityResultContract =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
-                result.data?.extras?.getParcelable<City>(CITY_EXTRA_KEY)?.also { city ->
+                result.data?.extras?.getParcelable<CityModel>(CITY_EXTRA_KEY)?.also { city ->
                     startCity = city
-                    chooseStartPointButton.text = city.fullname
+                    chooseStartPointButton.text = city.fullName
                 }
             }
         }
@@ -35,9 +35,9 @@ class ChooseDestinationActivity : AppCompatActivity() {
     private val destinationCityResultContract =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
-                result.data?.extras?.getParcelable<City>(CITY_EXTRA_KEY)?.also { city ->
+                result.data?.extras?.getParcelable<CityModel>(CITY_EXTRA_KEY)?.also { city ->
                     destinationCity = city
-                    chooseDestinationPointButton.text = city.fullname
+                    chooseDestinationPointButton.text = city.fullName
                 }
             }
         }
@@ -58,13 +58,13 @@ class ChooseDestinationActivity : AppCompatActivity() {
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        savedInstanceState.getParcelable<City>(START_CITY_BUNDLE_KEY)?.also { city ->
+        savedInstanceState.getParcelable<CityModel>(START_CITY_BUNDLE_KEY)?.also { city ->
             startCity = city
-            chooseStartPointButton.text = startCity?.fullname
+            chooseStartPointButton.text = startCity?.fullName
         }
-        savedInstanceState.getParcelable<City>(DESTINATION_CITY_BUNDLE_KEY)?.also { city ->
+        savedInstanceState.getParcelable<CityModel>(DESTINATION_CITY_BUNDLE_KEY)?.also { city ->
             destinationCity = city
-            chooseDestinationPointButton.text = destinationCity?.fullname
+            chooseDestinationPointButton.text = destinationCity?.fullName
         }
     }
 

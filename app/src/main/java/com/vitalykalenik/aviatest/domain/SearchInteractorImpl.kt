@@ -1,6 +1,6 @@
 package com.vitalykalenik.aviatest.domain
 
-import com.vitalykalenik.aviatest.models.AviaResponse
+import com.vitalykalenik.aviatest.domain.models.City
 import io.reactivex.Single
 import javax.inject.Inject
 
@@ -15,5 +15,5 @@ class SearchInteractorImpl @Inject constructor(
     private val aviaRepository: AviaRepository
 ) : SearchInteractor {
 
-    override fun getCities(request: String): Single<AviaResponse> = aviaRepository.getCities(request)
+    override fun getCities(request: String): Single<List<City>> = aviaRepository.getCities(request)
 }

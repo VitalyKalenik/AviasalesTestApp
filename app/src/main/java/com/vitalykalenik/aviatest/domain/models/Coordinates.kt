@@ -1,8 +1,6 @@
-package com.vitalykalenik.aviatest.models
+package com.vitalykalenik.aviatest.domain.models
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
 
 /**
  * Координаты
@@ -12,7 +10,6 @@ import kotlinx.android.parcel.Parcelize
  *
  * @author Vitaly Kalenik
  */
-@Parcelize
 data class Coordinates(
 
     @SerializedName("lat")
@@ -21,4 +18,4 @@ data class Coordinates(
     @SerializedName("lon")
     val longitude: Double
 
-) : Parcelable
+)

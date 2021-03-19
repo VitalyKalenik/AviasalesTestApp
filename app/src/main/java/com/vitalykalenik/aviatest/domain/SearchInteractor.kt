@@ -1,6 +1,6 @@
 package com.vitalykalenik.aviatest.domain
 
-import com.vitalykalenik.aviatest.models.AviaResponse
+import com.vitalykalenik.aviatest.domain.models.City
 import io.reactivex.Single
 
 /**
@@ -15,5 +15,5 @@ interface SearchInteractor {
      *
      * @param request Поисковый запрос
      */
-    fun getCities(request: String) : Single<AviaResponse>
+    fun getCities(request: String) : Single<List<City>>
 }

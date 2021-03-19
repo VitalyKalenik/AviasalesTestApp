@@ -8,8 +8,9 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.vitalykalenik.aviatest.R
-import com.vitalykalenik.aviatest.models.City
+import com.vitalykalenik.aviatest.domain.models.City
 import com.vitalykalenik.aviatest.view.animation.MarkerAnimator
+import com.vitalykalenik.aviatest.view.models.CityModel
 
 /**
  * Экран с анимацией летящего самолетика
@@ -32,8 +33,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
 
-        val startLocation = intent.getParcelableExtra<City>(START_LOCATION_EXTRA)
-        val destinationLocation = intent.getParcelableExtra<City>(DESTINATION_LOCATION_EXTRA)
+        val startLocation = intent.getParcelableExtra<CityModel>(START_LOCATION_EXTRA)
+        val destinationLocation = intent.getParcelableExtra<CityModel>(DESTINATION_LOCATION_EXTRA)
 
         animator = MarkerAnimator(
             map,
@@ -72,7 +73,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
          * @param destinationCity Город назначения
          */
         @JvmStatic
-        fun newIntent(context: Context, startCity: City, destinationCity: City): Intent =
+        fun newIntent(context: Context, startCity: CityModel, destinationCity: CityModel): Intent =
             Intent(
                 context, MapsActivity::class.java
             ).apply {

@@ -1,6 +1,6 @@
 package com.vitalykalenik.aviatest.data.api
 
-import com.vitalykalenik.aviatest.models.AviaResponse
+import com.vitalykalenik.aviatest.data.models.AviaResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query

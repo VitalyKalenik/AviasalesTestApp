@@ -1,9 +1,6 @@
-package com.vitalykalenik.aviatest.models
+package com.vitalykalenik.aviatest.domain.models
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
-
 
 /**
  * Город
@@ -21,7 +18,6 @@ import kotlinx.android.parcel.Parcelize
  *
  * @author Vitaly Kalenik
  */
-@Parcelize
 data class City(
 
     @SerializedName("countryCode")
@@ -51,4 +47,4 @@ data class City(
     @SerializedName("iata")
     val shortName: List<String> = emptyList(),
 
-) : Parcelable
+)

@@ -15,8 +15,9 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.vitalykalenik.aviatest.R
-import com.vitalykalenik.aviatest.models.City
+import com.vitalykalenik.aviatest.domain.models.City
 import com.vitalykalenik.aviatest.utils.StringUtils
+import com.vitalykalenik.aviatest.view.models.CityModel
 
 /**
  * Класс, который занимается отрисовкой баблов начального и конечного пункта маршрута самолетика
@@ -35,8 +36,8 @@ object StartFinishMarkerDrawer {
         context: Context,
         startLatLng: LatLng,
         destinationLatLng: LatLng,
-        startCity: City,
-        destinationCity: City
+        startCity: CityModel,
+        destinationCity: CityModel
     ) {
         val textView = TextView(context).apply {
             val width = resources.getDimensionPixelSize(R.dimen.map_city_marker_width)

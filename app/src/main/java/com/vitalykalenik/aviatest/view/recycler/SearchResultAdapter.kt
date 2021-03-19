@@ -5,8 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.vitalykalenik.aviatest.R
-import com.vitalykalenik.aviatest.models.City
+import com.vitalykalenik.aviatest.domain.models.City
 import com.vitalykalenik.aviatest.view.activity.SearchActivity
+import com.vitalykalenik.aviatest.view.models.CityModel
 
 /**
  * Адаптер для списка на экране со строкой поиска
@@ -18,14 +19,14 @@ import com.vitalykalenik.aviatest.view.activity.SearchActivity
 class SearchResultAdapter(private val clickListener: SearchActivity.SearchResultClick) :
     RecyclerView.Adapter<SearchResultViewHolder>() {
 
-    private val itemList = mutableListOf<City>()
+    private val itemList = mutableListOf<CityModel>()
 
     /**
      * Обновить список
      *
      * @param newList Новый список городов
      */
-    fun updateList(newList: List<City>) {
+    fun updateList(newList: List<CityModel>) {
         val diffUtil = SearchDiffUtil(itemList, newList)
         val diffUtilResult = DiffUtil.calculateDiff(diffUtil)
         itemList.clear()

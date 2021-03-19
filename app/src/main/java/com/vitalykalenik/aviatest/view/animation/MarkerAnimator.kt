@@ -12,12 +12,11 @@ import com.google.android.gms.maps.Projection
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.vitalykalenik.aviatest.R
-import com.vitalykalenik.aviatest.models.City
-import com.vitalykalenik.aviatest.models.Coordinates
 import com.vitalykalenik.aviatest.view.animation.MapHelper.prepareMap
 import com.vitalykalenik.aviatest.view.animation.PathDrawer.drawPlanePath
 import com.vitalykalenik.aviatest.view.animation.PlaneDrawer.addPlaneMarker
 import com.vitalykalenik.aviatest.view.animation.StartFinishMarkerDrawer.addStartAndDestinationPoints
+import com.vitalykalenik.aviatest.view.models.CityModel
 
 /**
  * Класс для анимирования самолетика
@@ -35,8 +34,8 @@ class MarkerAnimator(
     private val map: GoogleMap,
     private val resources: Resources,
     private val context: Context,
-    private val startCity: City,
-    private val destinationCity: City,
+    private val startCity: CityModel,
+    private val destinationCity: CityModel,
     startValue: Float = 0f
 ) {
 
@@ -51,8 +50,8 @@ class MarkerAnimator(
     private lateinit var planeMarker: Marker
     private lateinit var animator: ValueAnimator
 
-    private val startLatLng: LatLng = startCity.coordinates.toLatLng()
-    private val destinationLatLng: LatLng = destinationCity.coordinates.toLatLng()
+    private val startLatLng: LatLng = startCity.latLng
+    private val destinationLatLng: LatLng = destinationCity.latLng
 
     private val dotsRadius: Int = resources.getDimensionPixelSize(R.dimen.animation_dots_radius)
     private val dotsMargin: Int = resources.getDimensionPixelSize(R.dimen.animation_dots_margin)
@@ -113,8 +112,6 @@ class MarkerAnimator(
             planeMarker.position = mapped
         }
     }
-
-    private fun Coordinates.toLatLng(): LatLng = LatLng(latitude, longitude)
 
     companion object {
 

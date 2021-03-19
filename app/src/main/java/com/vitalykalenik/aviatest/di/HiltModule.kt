@@ -5,6 +5,10 @@ import com.vitalykalenik.aviatest.data.api.AviaApi
 import com.vitalykalenik.aviatest.domain.AviaRepository
 import com.vitalykalenik.aviatest.domain.SearchInteractor
 import com.vitalykalenik.aviatest.domain.SearchInteractorImpl
+import com.vitalykalenik.aviatest.domain.models.City
+import com.vitalykalenik.aviatest.domain.models.OneWayConverter
+import com.vitalykalenik.aviatest.view.models.CityModel
+import com.vitalykalenik.aviatest.view.models.CityToCityModelConverter
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -38,4 +42,7 @@ object HiltModule {
 
     @Provides
     fun provideSearchInteractor(repository: AviaRepository) : SearchInteractor = SearchInteractorImpl(repository)
+
+    @Provides
+    fun provideCityToCityModelConverter(): OneWayConverter<City, CityModel> = CityToCityModelConverter()
 }

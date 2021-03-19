@@ -1,7 +1,7 @@
 package com.vitalykalenik.aviatest.view.recycler
 
 import androidx.recyclerview.widget.DiffUtil
-import com.vitalykalenik.aviatest.models.City
+import com.vitalykalenik.aviatest.view.models.CityModel
 
 /**
  * Реализация [DiffUtil.Callback] для адаптера на экране с поисковой строкой
@@ -12,8 +12,8 @@ import com.vitalykalenik.aviatest.models.City
  * @author Vitaly Kalenik
  */
 class SearchDiffUtil(
-    private val oldList: List<City>,
-    private val newList: List<City>
+    private val oldList: List<CityModel>,
+    private val newList: List<CityModel>
 ) : DiffUtil.Callback() {
 
     override fun getOldListSize(): Int = oldList.size
@@ -21,7 +21,7 @@ class SearchDiffUtil(
     override fun getNewListSize(): Int = newList.size
 
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
-        oldList[oldItemPosition] == newList[newItemPosition]
+        oldList[oldItemPosition].city == newList[newItemPosition].city
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
         oldList[oldItemPosition] == newList[newItemPosition]

@@ -1,7 +1,7 @@
 package com.vitalykalenik.aviatest.domain
 
-import com.vitalykalenik.aviatest.models.AviaResponse
-import com.vitalykalenik.aviatest.models.City
+import com.vitalykalenik.aviatest.domain.models.City
+import com.vitalykalenik.aviatest.data.models.AviaResponse
 import io.mockk.every
 import io.mockk.mockk
 import io.reactivex.Single
@@ -19,7 +19,7 @@ class SearchInteractorImplTest {
 
     @Test
     fun `test search`(){
-        val expected = AviaResponse(listOf(City()))
+        val expected = listOf(City())
         every { repository.getCities(any()) } returns Single.just(expected)
         interactor.getCities("Moscow").test().assertValue(expected)
     }

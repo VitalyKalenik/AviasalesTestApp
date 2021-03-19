@@ -1,8 +1,8 @@
 package com.vitalykalenik.aviatest.data
 
 import com.vitalykalenik.aviatest.data.api.AviaApi
-import com.vitalykalenik.aviatest.models.AviaResponse
-import com.vitalykalenik.aviatest.models.City
+import com.vitalykalenik.aviatest.data.models.AviaResponse
+import com.vitalykalenik.aviatest.domain.models.City
 import io.mockk.every
 import io.mockk.mockk
 import io.reactivex.Single
@@ -24,7 +24,7 @@ class AviaRepositoryImplTest {
         val expected = AviaResponse(listOf(City()))
         every { api.getCities(any(), any()) } returns Single.just(expected)
 
-        repository.getCities("Moscow").test().assertValue(expected)
+        repository.getCities("Moscow").test().assertValue(expected.cities)
     }
 
     @Test
@@ -35,13 +35,13 @@ class AviaRepositoryImplTest {
         every { api.getCities(any(), EN_LANG) } returns Single.just(expectedEn)
 
         Locale.setDefault(Locale(RU_LANG))
-        repository.getCities("Moscow").test().assertValue(expectedRu)
+        repository.getCities("Moscow").test().assertValue(expectedRu.cities)
 
         Locale.setDefault(Locale(EN_LANG))
-        repository.getCities("Moscow").test().assertValue(expectedEn)
+        repository.getCities("Moscow").test().assertValue(expectedEn.cities)
 
         Locale.setDefault(Locale(IT_LANG))
-        repository.getCities("Moscow").test().assertValue(expectedEn)
+        repository.getCities("Moscow").test().assertValue(expectedEn.cities)
     }
 
     companion object {

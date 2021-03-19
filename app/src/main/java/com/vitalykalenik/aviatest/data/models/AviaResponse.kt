@@ -1,6 +1,7 @@
-package com.vitalykalenik.aviatest.models
+package com.vitalykalenik.aviatest.data.models
 
 import com.google.gson.annotations.SerializedName
+import com.vitalykalenik.aviatest.domain.models.City
 
 /**
  * Ответ от сервера

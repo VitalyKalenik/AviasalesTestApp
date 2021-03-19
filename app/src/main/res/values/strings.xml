@@ -7,7 +7,7 @@
     <!-- Ошибки -->
     <string name="choose_different_cities_error">Choose different cities</string>
     <string name="cities_not_chosen_error">Choose start and destination city</string>
-    <string name="search_error">Something went wrong</string>
+    <string name="search_error">Something went wrong :(</string>
 
     <!-- Кнопки -->
     <string name="button_start_point">Start point</string>
@@ -16,5 +16,6 @@
 
     <!-- Поиск -->
     <string name="search_view_hint">Input city name here</string>
+    <string name="no_results_error">Nothing found :(</string>
 
 </resources>
