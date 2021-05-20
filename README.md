@@ -1,8 +1,9 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+В репозитории приведен набор соглашений по оформлению кода на языке Kotlin. 
 
-- [Содержание](#%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B5)
+Этот список правил расширяет предложенные [Google](https://android.github.io/kotlin-guides/style.html) и [командой разработки Kotlin](https://kotlinlang.org/docs/reference/coding-conventions.html) гайды и пересматривает в них некоторые неоднозначные моменты.
+
+# Содержание
+
 - [Длина строки](#%D0%B4%D0%BB%D0%B8%D0%BD%D0%B0-%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8)
 - [Правила именования](#%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-%D0%B8%D0%BC%D0%B5%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)
 - [Форматирование выражений](#%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9)
@@ -17,28 +18,6 @@
 - [Использование условных операторов](#%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%BD%D1%8B%D1%85-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BE%D0%B2)
 - [Template header](#template-header)
 - [Файлы](#%D1%84%D0%B0%D0%B9%D0%BB%D1%8B)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-В репозитории приведен набор соглашений по оформлению кода на языке Kotlin. 
-
-Этот список правил расширяет предложенные [Google](https://android.github.io/kotlin-guides/style.html) и [командой разработки Kotlin](https://kotlinlang.org/docs/reference/coding-conventions.html) гайды и пересматривает в них некоторые неоднозначные моменты.
-
-# Содержание
-1. [Длина строки](#linelength)
-2. [Правила именования](#naming)
-3. [Форматирование выражений](#expression_formating)
-4. [Функции](#function)
-    * 4.1 [Функции с одним выражением](#function_expression)
-    * 4.2 [Форматирование вызова функции](#formating_function_calling)
-    * 4.3 [Вызов переменной функционального типа](#calling_function_variable)
-5. [Классы](#classes)
-6. [Аннотации](#annotation)
-7. [Структура класса](#class_member_order)
-8. [Форматирование лямбда-выражений](#lambda_formating)
-9. [Использование условных операторов](#condition_operator)
-10. [Template header](#template_header)
-11. [Файлы](#files)
 
 
 # Длина строки
